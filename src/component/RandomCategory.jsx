@@ -25,10 +25,10 @@ const RandomCategory = () => {
                     <Link to='/categories'>
                         <h2 className="text-center mb-3 mt-5">Une catégorie aléatoire : </h2>
                     </Link>
-                    <Link to={`/cocktails-by-categories/${nameEncodeUtf8}`}>
-                        <h4 className="text-center">La voici : {category.strCategory}</h4>
 
-                    </Link>
+                    <h4 className="text-center">La voici : <Link to={`/cocktails-by-categories/${nameEncodeUtf8}`}>{category.strCategory}</Link></h4>
+
+
                 </>
             ) : (
                 <p>Données en cours de chargement</p>

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
+
     return (
         <div className="col-12 d-flex justify-content-beetween">
             <div className="col-6">
@@ -8,8 +10,7 @@ const Header = () => {
             </div>
             <div className="col-6">
                 <div>
-                    <input type="text" />
-                    <input type="submit" />
+                    <SearchBar />
                 </div>
                 <div className="d-flex gap-2">
                     <Link to='/'>Home</Link>
