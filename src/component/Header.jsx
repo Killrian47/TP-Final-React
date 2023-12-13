@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className="col-12 d-flex justify-content-beetween">
             <div className="col-6">
-                <img src="" alt="logo application" />
+                <img src="/logo_appli.png" alt="logo application" width={150} height={125} className="ms-3" />
             </div>
             <div className="col-6">
                 <div>

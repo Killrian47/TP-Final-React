@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
 
@@ -6,17 +6,23 @@ const CocktailsDetail = () => {
     const { id } = useParams();
     const [oneCocktail, setOneCocktail] = useState();
     const [categoryNameEncodeUtf8, setCategoryNameEncodeUtf8] = useState();
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
             // récupération d'un cocktail via son id 
             const oneCocktailResponse = await fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id)
             const oneCocktailResponseData = await oneCocktailResponse.json();
-            const getCategoryFromTheCocktailResponse = await oneCocktailResponseData.drinks.map((cocktail) => {
-                // encodage du nom de la catégorie du cocktail
-                return encodeURIComponent(cocktail.strCategory, "UTF-8")
-            })
+            let getCategoryFromTheCocktailResponse = null;
+
+            if (oneCocktailResponseData.drinks === null) {
+                navigate('/404-not-found')
+            } else {
+                getCategoryFromTheCocktailResponse = await oneCocktailResponseData.drinks.map((cocktail) => {
+                    // encodage du nom de la catégorie du cocktail
+                    return encodeURIComponent(cocktail.strCategory, "UTF-8")
+                })
+            }
 
             setCategoryNameEncodeUtf8(await getCategoryFromTheCocktailResponse);
             setOneCocktail(await oneCocktailResponseData.drinks);

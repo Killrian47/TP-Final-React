@@ -11,14 +11,18 @@ const SearchBar = () => {
         const resultInputSearchBar = event.target.search.value;
 
         setFormData(event.target.search.value);
-        redirectToResult('/search-result')
+        redirectToResult(`/search-result?search=${resultInputSearchBar}`)
     }
 
-    console.log(formData);
+    const handleChange = (event) => {
+        setFormData(event.target.value);
+    };
+
+    //console.log(formData);
 
     return (
         <form onSubmit={handleForm}>
-            <input type="text" name="search" placeholder="Rechercher" />
+            <input type="text" name="search" placeholder="Rechercher" onChange={handleChange} />
             <input type="submit" />
         </form>
     );
