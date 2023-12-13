@@ -36,7 +36,6 @@ const FourLastCocktails = () => {
                             )
                         })}
                     </div>
-                    <div className="col-1"></div>
                 </>
 
             ) : (

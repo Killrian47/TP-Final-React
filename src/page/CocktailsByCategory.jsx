@@ -1,30 +1,32 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../component/Header";
 
-const CocktailsPage = () => {
-    const [cocktails, setCocktails] = useState();
+const CocktailsByCategory = () => {
+    const { name } = useParams();
+    const [cocktailsByCategory, setCocktailsByCategory] = useState();
+
 
     useEffect(() => {
         (async () => {
-            // récupération de 25 cocktails depuis l'API
-            const cocktailsResponse = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=');
-            const cocktailsResponseData = await cocktailsResponse.json();
 
-            setCocktails(await cocktailsResponseData.drinks);
+            const cocktailsByCategoryResponse = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' + name)
+            const cocktailsByCategoryResponseData = await cocktailsByCategoryResponse.json();
+
+            setCocktailsByCategory(cocktailsByCategoryResponseData.drinks);
         })();
     }, [])
 
-    console.log(cocktails);
+    console.log(cocktailsByCategory);
 
     return (
         <>
             <Header />
-            {cocktails ? (
+            {cocktailsByCategory ? (
                 <>
-                    <h2 className="text-center mb-3">Liste des cocktails</h2>
+                    <h2 className="text-center mb-3 mt-5">Les cocktails catégorisé : {name}</h2>
                     <div className="d-flex flex-wrap col-12 justify-content-center gap-3">
-                        {cocktails.map((cocktail) => {
+                        {cocktailsByCategory.map((cocktail) => {
                             return (
                                 <div className="cocktail-card d-flex flex-column align-items-center justify-content-center col-12 col-lg-5">
                                     <h4>Nom : {cocktail.strDrink}</h4>
@@ -42,7 +44,6 @@ const CocktailsPage = () => {
             )}
         </>
     )
-
 }
 
-export default CocktailsPage
+export default CocktailsByCategory;
