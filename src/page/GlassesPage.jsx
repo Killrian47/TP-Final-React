@@ -17,8 +17,6 @@ const GlassesPage = () => {
         })();
     }, [])
 
-    console.log(glasses);
-
     return (
         <>
             <Header />

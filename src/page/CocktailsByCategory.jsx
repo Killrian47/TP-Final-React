@@ -20,8 +20,6 @@ const CocktailsByCategory = () => {
         })();
     }, [])
 
-    console.log(cocktailsByCategory);
-
     return (
         <>
             <Header />

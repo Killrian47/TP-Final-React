@@ -18,8 +18,6 @@ const CocktailsByIngredient = () => {
         })();
     }, [])
 
-    console.log(cocktailsByIngredient);
-
     return (
         <>
             <Header />

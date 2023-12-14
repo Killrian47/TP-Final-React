@@ -18,8 +18,6 @@ const SearchBar = () => {
         setFormData(event.target.value);
     };
 
-    //console.log(formData);
-
     return (
         <form onSubmit={handleForm} className="d-flex gap-2 justify-content-center">
             <input type="text" name="search" placeholder="Rechercher cocktails" onChange={handleChange} className="form-control w-75" />

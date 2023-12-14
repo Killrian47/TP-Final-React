@@ -17,8 +17,6 @@ const RandomCategory = () => {
         })();
     }, [])
 
-    //console.log(nameEncodeUtf8);
-
     return (
         <>
             {category ? (
