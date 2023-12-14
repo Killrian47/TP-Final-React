@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import DataLoading from "./DataLoading";
 
 const RandomCategory = () => {
     const [category, setCategory] = useState();
@@ -27,7 +28,9 @@ const RandomCategory = () => {
                     <h4 className="text-center">La voici : <Link className="link-to" to={`/cocktails-by-categories/${nameEncodeUtf8}`}>{category.strCategory}</Link></h4>
                 </>
             ) : (
-                <p>Données en cours de chargement</p>
+                <>
+                    <DataLoading />
+                </>
             )
             }
         </>

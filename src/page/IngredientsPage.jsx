@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
 import { Link } from "react-router-dom";
+import DataLoading from "../component/DataLoading";
 
 const IngredientsPage = () => {
     const [ingredients, setIngredients] = useState();
@@ -36,7 +37,9 @@ const IngredientsPage = () => {
                     </div>
                 </>
             ) : (
-                <p>Données en cours de chargement</p>
+                <>
+                    <DataLoading />
+                </>
             )}
         </>
     )

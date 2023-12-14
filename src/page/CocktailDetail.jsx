@@ -1,6 +1,7 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
+import DataLoading from "../component/DataLoading";
 
 const CocktailsDetail = () => {
     const { id } = useParams();
@@ -82,7 +83,9 @@ const CocktailsDetail = () => {
                     </div>
                 </div>
             ) : (
-                <p>Données en cours de chargement</p>
+                <>
+                    <DataLoading />
+                </>
             )}
 
         </>

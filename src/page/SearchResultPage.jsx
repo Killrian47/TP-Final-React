@@ -1,14 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
-import CocktailCard from "../component/CocktailCard";
+import VerificationCocktailsData from "../component/VerificationCocktailsData";
 
 const SearchResultPage = () => {
     const { search } = useLocation();
     const [cocktailsBySearch, setCocktailBySearch] = useState();
     const searchTerm = new URLSearchParams(search).get('search');
     const navigate = useNavigate();
-
 
     useEffect(() => {
         (async () => {
@@ -25,29 +24,15 @@ const SearchResultPage = () => {
         })();
     }, [searchTerm])
 
-    //console.log(cocktailsBySearch);
-
+    const props = {
+        data: cocktailsBySearch,
+        str: 'Les cocktails ayant ' + searchTerm + ' dans leur nom',
+    }
 
     return (
         <>
             <Header />
-            {cocktailsBySearch ? (
-                <>
-                    <h3 className="text-center mt-3">Les cocktails ayant dans leur noms : {searchTerm}</h3>
-                    <div className="d-flex flex-wrap col-12 justify-content-center gap-3 mb-3">
-                        {cocktailsBySearch.map((cocktail) => {
-                            return (
-                                <CocktailCard cocktail={cocktail} />
-                            );
-                        })}
-                    </div>
-                </>
-
-            ) : (
-                <>
-                    <p className="text-center mt-3">Données en cours de chargement</p>
-                </>
-            )}
+            <VerificationCocktailsData props={props} />
         </>
 
     )
