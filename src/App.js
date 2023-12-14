@@ -6,6 +6,10 @@ import CategoriesPage from "./page/CategoriesPage.jsx";
 import CocktailsByCategory from "./page/CocktailsByCategory.jsx";
 import SearchResultPage from "./page/SearchResultPage.jsx";
 import PathNotFound from "./page/PathNotFound.jsx";
+import GlassesPage from "./page/GlassesPage.jsx";
+import CocktailsByGlass from "./page/CocktailsByGlass.jsx";
+import IngredientsPage from "./page/IngredientsPage.jsx";
+import CocktailsByIngredient from "./page/CocktailsByIngredient.jsx";
 
 function App() {
   return (
@@ -16,7 +20,11 @@ function App() {
         <Route path="/cocktail/detail/:id" element={<CocktailsDetail />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/cocktails-by-categories/:name" element={<CocktailsByCategory />} />
+        <Route path="/glasses" element={<GlassesPage />} />
+        <Route path="/cocktails-by-glasses/:name" element={<CocktailsByGlass />} />
         <Route path="/search-result" element={<SearchResultPage />} />
+        <Route path="/ingredients" element={<IngredientsPage /> } />
+        <Route path="/cocktails-by-ingredient/:name" element={<CocktailsByIngredient /> } />
         <Route path="*" element={<PathNotFound />} />
       </Routes>
     </BrowserRouter>
