@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "../component/Header";
 import { Link } from "react-router-dom";
 import DataLoading from "../component/DataLoading";
+import Footer from "../component/Footer";
 
 const GlassesPage = () => {
     const [glasses, setGlasses] = useState();
@@ -42,6 +43,7 @@ const GlassesPage = () => {
                     <DataLoading />
                 </>
             )}
+            <Footer />
         </>
     )
 }

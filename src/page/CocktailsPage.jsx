@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
 import VerificationCocktailsData from "../component/VerificationCocktailsData";
+import Footer from "../component/Footer";
 
 const CocktailsPage = () => {
     const [cocktails, setCocktails] = useState();
@@ -24,6 +25,7 @@ const CocktailsPage = () => {
         <>
             <Header />
             <VerificationCocktailsData props={props} />
+            <Footer />
         </>
     )
 

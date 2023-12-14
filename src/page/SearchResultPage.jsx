@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
 import VerificationCocktailsData from "../component/VerificationCocktailsData";
+import FixedFooter from "../component/FixedFooter";
 
 const SearchResultPage = () => {
     const { search } = useLocation();
@@ -33,6 +34,7 @@ const SearchResultPage = () => {
         <>
             <Header />
             <VerificationCocktailsData props={props} />
+            <FixedFooter />
         </>
 
     )

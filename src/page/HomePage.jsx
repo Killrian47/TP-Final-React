@@ -4,6 +4,8 @@ import FourLastCocktails from "../component/FourLastCocktails"
 import Header from "../component/Header"
 import RandomCategory from "../component/RandomCategory"
 import DataLoading from "../component/DataLoading.jsx"
+import Footer from "../component/Footer.jsx"
+import FixedFooter from "../component/FixedFooter.jsx"
 
 const HomePage = () => {
 
@@ -35,6 +37,7 @@ const HomePage = () => {
                 </>
             )}
             <RandomCategory />
+            <FixedFooter />
         </>
     )
 }

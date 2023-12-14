@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Header from "../component/Header";
 import { Link } from "react-router-dom";
 import DataLoading from "../component/DataLoading";
+import Footer from "../component/Footer";
+import FixedFooter from "../component/FixedFooter";
 
 const CategoriesPage = () => {
     const [categories, setCategories] = useState();
@@ -42,6 +44,7 @@ const CategoriesPage = () => {
                     <DataLoading />
                 </>
             )}
+            <FixedFooter />
         </>
     )
 }

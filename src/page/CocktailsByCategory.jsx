@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import Header from "../component/Header";
 import CocktailCard from "../component/CocktailCard";
 import DataLoading from "../component/DataLoading";
+import Footer from "../component/Footer";
 
 const CocktailsByCategory = () => {
     const { name } = useParams();
@@ -40,6 +41,7 @@ const CocktailsByCategory = () => {
                     <DataLoading />
                 </>
             )}
+            <Footer />
         </>
     )
 }
