@@ -23,13 +23,13 @@ const GlassesPage = () => {
             {glasses ? (
                 <>
                     <h2 className="text-center mb-3">Liste des verres</h2>
-                    <div className="d-flex flex-wrap col-12 justify-content-center gap-3">
+                    <div className="d-flex flex-wrap col-12 justify-content-center gap-3 mb-3">
                         {glasses.map((glass) => {
                             return (
-                                <div className="cocktail-card d-flex flex-column align-items-center justify-content-center col-12 col-lg-5">
-                                    <h4>Nom : {glass.strGlass}</h4>
+                                <div className="cocktail-card d-flex flex-column align-items-center justify-content-center col-11 col-sm-5 col-lg-3 col-xl-2 pt-2">
+                                    <h4 className="text-center">{glass.strGlass}</h4>
                                     <Link to={`/cocktails-by-glasses/${glass.strGlass}`} className="link-to">
-                                        <p>Voir des cocktails avec ce verre</p>
+                                        <p className="text-center">Voir des cocktails avec ce verre</p>
                                     </Link>
                                 </div>
                             )

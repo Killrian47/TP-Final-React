@@ -10,6 +10,7 @@ import GlassesPage from "./page/GlassesPage.jsx";
 import CocktailsByGlass from "./page/CocktailsByGlass.jsx";
 import IngredientsPage from "./page/IngredientsPage.jsx";
 import CocktailsByIngredient from "./page/CocktailsByIngredient.jsx";
+import './App.css'
 
 function App() {
   return (

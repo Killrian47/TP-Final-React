@@ -7,7 +7,6 @@ const HomePage = () => {
     return (
         <>
             <Header />
-            <h2>Home</h2>
 
             <FourLastCocktails />
             <RandomCategory />

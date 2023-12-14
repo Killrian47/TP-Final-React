@@ -21,12 +21,12 @@ const IngredientsPage = () => {
             <Header />
             {ingredients ? (
                 <>
-                    <h2 className="text-center mb-3">Liste des verres</h2>
-                    <div className="d-flex flex-wrap col-12 justify-content-center gap-3">
+                    <h2 className="text-center mb-3">Liste des ingrédients</h2>
+                    <div className="d-flex flex-wrap col-12 justify-content-center gap-3 mb-3">
                         {ingredients.map((ingredient) => {
                             return (
-                                <div className="cocktail-card d-flex flex-column align-items-center justify-content-center col-5 col-lg-3w">
-                                    <p>Nom : <strong>{ingredient.strIngredient1}</strong></p>
+                                <div className="cocktail-card d-flex flex-column align-items-center justify-content-center col-11 col-sm-5 col-lg-2 pt-2">
+                                    <h4>{ingredient.strIngredient1}</h4>
                                     <Link to={`/cocktails-by-ingredient/${ingredient.strIngredient1}`} className="link-to">
                                         <p>Cocktails avec cet ingrédient</p>
                                     </Link>

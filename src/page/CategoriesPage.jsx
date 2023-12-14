@@ -20,16 +20,16 @@ const CategoriesPage = () => {
             <Header />
             {categories ? (
                 <>
-                    <h2 className="text-center mb-3 mt-5">Toutes les catéogories</h2>
+                    <h2 className="text-center mb-3 ">Toutes les catégories</h2>
                     <div className="d-flex flex-wrap col-12 justify-content-center gap-3">
                         {categories.map((categorie) => {
                             // encodage du nom de la catégorie pour ne pas avoir un mauvais lien
                             let categoryNameCategoryEncodeUtf8 = encodeURIComponent(categorie.strCategory, "UTF-8")
                             return (
-                                <div className="d-flex flex-column align-items-center justify-content-center col-12 col-lg-5">
-                                    <h4>Nom : {categorie.strCategory}</h4>
+                                <div className="cocktail-card d-flex flex-column align-items-center justify-content-center col-11 col-sm-5 col-lg-3 pt-2">
+                                    <h4>{categorie.strCategory}</h4>
                                     <Link to={`/cocktails-by-categories/${categoryNameCategoryEncodeUtf8}`} className="link-to">
-                                        <p>Voir plus de cocktails de cette catégorie</p>
+                                        <p className="text-center">Voir plus de cocktails de cette catégorie</p>
                                     </Link>
                                 </div>
                             );

@@ -21,9 +21,9 @@ const SearchBar = () => {
     //console.log(formData);
 
     return (
-        <form onSubmit={handleForm}>
-            <input type="text" name="search" placeholder="Rechercher" onChange={handleChange} />
-            <input type="submit" />
+        <form onSubmit={handleForm} className="d-flex gap-2 justify-content-center">
+            <input type="text" name="search" placeholder="Rechercher cocktails" onChange={handleChange} className="form-control w-75" />
+            <input type="submit" className="btn btn-primary" />
         </form>
     );
 }

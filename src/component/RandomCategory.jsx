@@ -22,17 +22,14 @@ const RandomCategory = () => {
         <>
             {category ? (
                 <>
-                    <Link to='/categories'>
-                        <h2 className="text-center mb-3 mt-5">Une catégorie aléatoire : </h2>
-                    </Link>
+                    <h2 className="text-center mb-3 mt-5">Une <Link className="link-to" to='/categories'>catégorie</Link> aléatoire : </h2>
 
-                    <h4 className="text-center">La voici : <Link to={`/cocktails-by-categories/${nameEncodeUtf8}`}>{category.strCategory}</Link></h4>
-
-
+                    <h4 className="text-center">La voici : <Link className="link-to" to={`/cocktails-by-categories/${nameEncodeUtf8}`}>{category.strCategory}</Link></h4>
                 </>
             ) : (
                 <p>Données en cours de chargement</p>
-            )}
+            )
+            }
         </>
     )
 }
